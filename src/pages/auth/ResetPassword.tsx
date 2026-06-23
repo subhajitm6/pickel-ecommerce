@@ -12,7 +12,7 @@ export function ResetPassword() {
   
   const navigate = useNavigate();
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (_data: any) => {
     setIsLoading(true);
     // Mock API call
     await new Promise(resolve => setTimeout(resolve, 1500));

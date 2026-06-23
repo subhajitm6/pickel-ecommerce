@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
-import { useCart } from '../context/CartContext';
-import { LogOut, Package, MapPin, Heart, Bell, Settings, Edit2, ChevronRight, ShoppingBag } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { LogOut, Package, MapPin, Heart, Bell, Settings, Edit2, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export function Profile() {
   const { user, logout } = useAuth();

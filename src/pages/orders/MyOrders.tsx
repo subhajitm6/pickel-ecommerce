@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useOrders, type Order } from '../../context/OrderContext';
 import { Link, useNavigate } from 'react-router-dom';
-import { Package, ArrowRight, Clock, MapPin, Calendar, ExternalLink, Search, Download, RefreshCw, Star, ChevronDown, ChevronUp } from 'lucide-react';
+import { Package, Clock, MapPin, Calendar, Search, Download, RefreshCw, Star, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState, useMemo } from 'react';
 import { useCart } from '../../context/CartContext';
 import { products } from '../../data';

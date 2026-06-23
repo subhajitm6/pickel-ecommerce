@@ -9,7 +9,7 @@ export function ForgotPassword() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (_data: any) => {
     setIsLoading(true);
     // Mock API call to send reset email
     await new Promise(resolve => setTimeout(resolve, 1500));

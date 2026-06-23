@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useCart } from '../context/CartContext';
 import { getProductBySlug } from '../data';
-import { Star, Truck, ShieldCheck, Heart, Share2, Plus, Minus } from 'lucide-react';
+import { Star, Truck, ShieldCheck, Heart, Plus, Minus } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export function ProductDetails() {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Mail, CheckCircle2, Loader2, ArrowRight } from 'lucide-react';
+import { Mail, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export function VerifyEmail() {
   const [status, setStatus] = useState<'verifying' | 'success' | 'error'>('verifying');
