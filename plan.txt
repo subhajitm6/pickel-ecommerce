@@ -1,0 +1,342 @@
+NEXT PHASE — BACKEND SETUP (LARAVEL API)
+
+Frontend is already completed.
+
+Now build the complete backend using Laravel.
+
+Architecture:
+
+Frontend:
+React (already exists)
+
+Backend:
+Laravel (API Only)
+
+Database:
+MySQL
+
+Communication:
+REST API using JSON
+
+Authentication:
+JWT Authentication
+
+==================================================
+
+PROJECT STRUCTURE
+
+Create separate folders:
+backend/
+
+Backend contains Laravel only.
+
+Use:
+
+Laravel Latest
+MySQL
+Eloquent ORM
+Laravel Validation
+Laravel API Resources
+RESTful Architecture
+
+==================================================
+
+BACKEND SETUP
+
+Initialize Laravel.
+
+Configure:
+
+.env
+
+Database:
+
+MYSQL_HOST
+MYSQL_PORT
+MYSQL_DATABASE
+MYSQL_USERNAME
+MYSQL_PASSWORD
+
+Create:
+
+Controllers
+Models
+Migrations
+Routes
+Services
+Middleware
+Resources
+
+==================================================
+
+DATABASE DESIGN
+
+USERS
+
+Fields:
+id
+name
+email
+phone
+password
+avatar
+role
+created_at
+
+==================================================
+
+PRODUCTS
+
+Fields:
+
+id
+title
+slug
+description
+price
+discount_price
+rating
+stock
+category
+image
+gallery
+ingredients
+nutrition
+featured
+created_at
+
+==================================================
+
+CATEGORIES
+
+Fields:
+
+id
+name
+slug
+image
+
+==================================================
+
+CART
+
+Fields:
+
+id
+user_id
+product_id
+quantity
+
+==================================================
+
+ORDERS
+
+Fields:
+
+id
+user_id
+order_number
+subtotal
+shipping
+discount
+tax
+total
+payment_method
+payment_status
+order_status
+created_at
+
+==================================================
+
+ORDER ITEMS
+
+Fields:
+
+id
+order_id
+product_id
+quantity
+price
+
+==================================================
+
+ADDRESSES
+
+Fields:
+
+id
+user_id
+full_name
+phone
+address
+city
+state
+postal_code
+
+==================================================
+
+AUTHENTICATION
+
+Implement:
+
+Register
+Login
+Logout
+Forgot Password
+Reset Password
+Email Verification
+
+Endpoints:
+
+POST /api/register
+POST /api/login
+POST /api/logout
+POST /api/forgot-password
+POST /api/reset-password
+
+Security:
+
+JWT
+Password Hashing
+Protected Routes
+
+==================================================
+
+PRODUCT API
+
+GET /api/products
+
+GET /api/products/
+
+GET /api/categories
+
+GET /api/featured-products
+
+GET /api/search
+
+==================================================
+
+CART API
+
+GET /api/cart
+
+POST /api/cart
+
+PUT /api/cart/
+
+DELETE /api/cart/
+
+==================================================
+
+CHECKOUT API
+
+POST /api/checkout
+
+Process:
+
+Validate
+Create Order
+Create Order Items
+Clear Cart
+
+Return:
+
+Order Summary
+
+==================================================
+
+MY ORDERS API
+
+GET /api/my-orders
+
+Return:
+
+All user orders.
+
+Each order contains:
+
+* Ordered Items
+* Prices
+* Status
+* Delivery Info
+
+==================================================
+
+ORDER DETAILS API
+
+GET /api/orders/
+
+Return:
+
+Products List
+Total
+Tracking Status
+
+==================================================
+
+ORDER TRACKING
+
+GET /api/track-order/
+
+Statuses:
+
+Placed
+Processing
+Packed
+Shipped
+Out For Delivery
+Delivered
+
+==================================================
+
+ADMIN PANEL (BASIC)
+
+Admin:
+
+Products
+Orders
+Users
+Categories
+
+Admin can:
+
+Create Product
+Update Product
+Delete Product
+Manage Orders
+
+==================================================
+
+FRONTEND CONNECTION
+
+Use Axios.
+
+Create:
+
+services/api.js
+
+Configure:
+
+Base URL
+Token Interceptor
+Error Handling
+
+Replace all mock data with real Laravel API.
+
+==================================================
+
+DEPLOYMENT READY
+
+Frontend:
+Environment variables
+
+Backend:
+Environment variables
+
+Enable:
+CORS
+Validation
+Error handling
+Production optimization
+
+Code should be clean and scalable.
