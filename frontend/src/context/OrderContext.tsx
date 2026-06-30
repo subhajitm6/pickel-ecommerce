@@ -23,6 +23,7 @@ export interface Order {
   shipping: number;
   total: number;
   payment_method: string;
+  shipping_address?: any;
 }
 
 interface OrderContextType {

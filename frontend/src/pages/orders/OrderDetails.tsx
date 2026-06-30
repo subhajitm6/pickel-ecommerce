@@ -24,7 +24,7 @@ export function OrderDetails() {
   };
 
   const statusSteps = ['Placed', 'Processing', 'Packed', 'Shipped', 'Delivered'];
-  const currentStepIndex = statusSteps.indexOf(order.status);
+  const currentStepIndex = statusSteps.findIndex(s => s.toLowerCase() === order.order_status);
 
   return (
     <motion.div 
@@ -42,7 +42,7 @@ export function OrderDetails() {
               <ArrowLeft size={20} /> Back to Orders
             </Link>
             <h1 className="text-4xl font-black text-brown">Order {order.id}</h1>
-            <p className="text-brown/60 font-medium mt-1">Placed on {formatDate(order.date)}</p>
+            <p className="text-brown/60 font-medium mt-1">Placed on {formatDate(order.created_at)}</p>
           </div>
           
           <div className="flex gap-3">
@@ -115,9 +115,11 @@ export function OrderDetails() {
               <div className="space-y-6">
                 {order.items.map((item) => (
                   <div key={item.id} className="flex gap-6 items-center">
-                    <div className={`w-24 h-24 rounded-2xl bg-gradient-to-br ${item.color} shrink-0 shadow-inner`} />
+                    <div className={`w-24 h-24 rounded-2xl bg-gradient-to-br ${'from-mango to-yellow-400'} shrink-0 shadow-inner overflow-hidden flex items-center justify-center`}>
+                      {item.product?.image && <img src={item.product.image} alt={item.product.title} className="w-full h-full object-cover" />}
+                    </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-brown mb-1">{item.name}</h3>
+                      <h3 className="text-xl font-bold text-brown mb-1">{item.product?.title || 'Product Name'}</h3>
                       <div className="text-brown/60 font-medium">Qty: {item.quantity}</div>
                     </div>
                     <div className="text-right">
@@ -161,10 +163,10 @@ export function OrderDetails() {
               </h2>
               
               <div className="text-brown font-medium space-y-1">
-                <p className="font-bold text-lg">{order.shippingAddress.firstName} {order.shippingAddress.lastName}</p>
-                <p className="text-brown/70">{order.shippingAddress.address}</p>
-                <p className="text-brown/70">{order.shippingAddress.city}, {order.shippingAddress.postalCode}</p>
-                <p className="text-brown/70 mt-2">Phone: {order.shippingAddress.phone}</p>
+                <p className="font-bold text-lg">{order.shipping_address?.full_name}</p>
+                <p className="text-brown/70">{order.shipping_address?.address}</p>
+                <p className="text-brown/70">{order.shipping_address?.city}, {order.shipping_address?.postal_code}</p>
+                <p className="text-brown/70 mt-2">Phone: {order.shipping_address?.phone}</p>
               </div>
             </div>
 
@@ -179,7 +181,7 @@ export function OrderDetails() {
                   <div className="text-sm text-brown/60 mb-1">Method</div>
                   <div className="font-bold flex items-center gap-2">
                     <div className="w-8 h-5 bg-mango/20 rounded border border-mango/40 flex items-center justify-center text-[10px]">PAY</div>
-                    {order.paymentMethod}
+                    {order.payment_method}
                   </div>
                 </div>
                 <div>
