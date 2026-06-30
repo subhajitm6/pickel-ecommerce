@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an Axios instance
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api', // Pointing to the Laravel backend
+  baseURL: 'https://pickel-ecommerce-laravel-api.onrender.com/api', // Pointing to the Laravel backend
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',

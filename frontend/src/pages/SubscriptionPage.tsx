@@ -33,7 +33,7 @@ export function SubscriptionPage() {
       const token = localStorage.getItem('token');
       const headers = token ? { Authorization: `Bearer ${token}` } : {};
       
-      const response = await axios.post('http://localhost:8000/api/subscribe', formData, { headers });
+      const response = await axios.post('https://pickel-ecommerce-laravel-api.onrender.com/api/subscribe', formData, { headers });
       
       if (response.status === 201) {
         navigate('/subscribe/success');
